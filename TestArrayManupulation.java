@@ -45,4 +45,11 @@ public class TestArrayManupulation {
 		
 		assertEquals(ArrayManupulation.FindStartIndexOfSecondArray(new int[]{}, new int[]{10,20,30,40,50}),-1);
 	}
+	
+	@Test
+	public void IndexWithFirstArrayIsNotSame() {
+		
+		assertEquals(ArrayManupulation.FindStartIndexOfSecondArray(new int[]{10,20,30,40,50}, new int[]{40,50,60}),-1);
+	}
+		
 }
