@@ -16,9 +16,18 @@ public final class ArrayManupulation {
 		int index = Arrays.binarySearch(array1, array2[0]);
 		if (index >= 0)
 		{
+			// check if we have the same number of elements when compared to the 
+			// from the index point of the first array AND
+			// total length of the second array
+			int length = (array1.length - index);
+			
+			if (length < array2.length) return -1;
+			if (length > array2.length) length = array2.length;
+			
 			// copy the array from first into tmpArray
-			int tmpArray[] = new int[array2.length];
-			System.arraycopy(array1, index, tmpArray, 0, array2.length);
+			int tmpArray[] = new int[length];
+			System.arraycopy(array1, index, tmpArray, 0, length);
+
 		
 			// check if the arrays tmpArray and second array are equal
 			if (Arrays.equals(tmpArray, array2))
